@@ -1,13 +1,13 @@
-package com.jpa.jpa_controller_test;
+package com.firstrest;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class JpaControllerTestApplication {
+public class FirstrestApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(JpaControllerTestApplication.class, args);
+		SpringApplication.run(FirstrestApplication.class, args);
 	}
 
 }
