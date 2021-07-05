@@ -90,6 +90,21 @@ public class SpringbootjpaApplication {
 //		  repository.deleteAll();
 //		  Iterable<Userr> findAll = repository.findAll();
 //		  repository.deleteAll(findAll);
+		  
+		  
+		  
+//		  List<Userr> findByName = repository.findByName("Awanish");
+//		  
+//		  findByName.forEach(u->System.out.println(u));
+		  
+		  List<Userr> allUserrs = repository.getAllUserr();
+		  
+		  allUserrs.forEach(u->System.out.println(u));
+		  
+		  
+		  
+		  
+		  
 	}
 
 }
