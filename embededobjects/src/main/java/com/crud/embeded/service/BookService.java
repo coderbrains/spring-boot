@@ -34,4 +34,9 @@ public class BookService {
 	public List<Author> getAuthorList(){
 		return authorRepo.findAll();
 	}
+
+
+	public Object getBookbyid(int id) {
+		return bookRepo.findById(id);
+	}
 }

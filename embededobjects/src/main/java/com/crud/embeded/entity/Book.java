@@ -11,6 +11,7 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
@@ -34,5 +35,6 @@ public class Book {
 	private String bookName;
 	
 	@OneToOne(cascade = CascadeType.ALL)
-	private Author Author; 
+	@JsonManagedReference
+	private Author author; 
 }
