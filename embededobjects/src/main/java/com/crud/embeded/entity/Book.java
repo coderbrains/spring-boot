@@ -1,5 +1,6 @@
 package com.crud.embeded.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,12 +22,9 @@ import lombok.experimental.Accessors;
 
 @Entity
 @Getter @Setter
-@Accessors(chain = true)
 @NoArgsConstructor
 @AllArgsConstructor
-@JsonIgnoreProperties(ignoreUnknown = true)
 @Table(name="book")
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property="bookId")
 
 public class Book {
 
@@ -35,6 +33,6 @@ public class Book {
 	private int bookId;
 	private String bookName;
 	
-	@OneToOne
-	private Author author;
+	@OneToOne(cascade = CascadeType.ALL)
+	private Author Author; 
 }

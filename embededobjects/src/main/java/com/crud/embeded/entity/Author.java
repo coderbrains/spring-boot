@@ -20,14 +20,9 @@ import lombok.experimental.Accessors;
 
 @Entity
 @Getter @Setter
-@Accessors(chain = true)
 @NoArgsConstructor
 @AllArgsConstructor
-@JsonIgnoreProperties(ignoreUnknown = true)
 @Table(name="author")
-@JsonInclude(value = Include.NON_NULL)
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property="authorid")
-
 public class Author {
 
 	@Id
