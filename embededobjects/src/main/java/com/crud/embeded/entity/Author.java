@@ -24,7 +24,7 @@ import lombok.experimental.Accessors;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-@Table(name="book")
+@Table(name="author")
 @JsonInclude(value = Include.NON_NULL)
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property="authorid")
 
@@ -34,5 +34,6 @@ public class Author {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int authorid;
 	private String authorname;
+	private String language;
 	
 }

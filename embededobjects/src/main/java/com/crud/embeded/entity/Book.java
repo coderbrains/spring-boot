@@ -26,8 +26,7 @@ import lombok.experimental.Accessors;
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Table(name="book")
-@JsonInclude(value = Include.NON_NULL)
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property="bookid")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property="bookId")
 
 public class Book {
 
@@ -35,6 +34,7 @@ public class Book {
 	@GeneratedValue(strategy =  GenerationType.IDENTITY)
 	private int bookId;
 	private String bookName;
+	
 	@OneToOne
 	private Author author;
 }
