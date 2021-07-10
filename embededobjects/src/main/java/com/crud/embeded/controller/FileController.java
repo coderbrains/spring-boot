@@ -28,11 +28,38 @@ public class FileController {
 
 			
 			boolean b = fileUploading.uploadFile(file);
-			return ResponseEntity.status(HttpStatus.OK).body("file uploaded successfully..");
+			if(b) {
+				return ResponseEntity.status(HttpStatus.OK).body("file uploaded successfully..");
+						
+			}else {
+				return ResponseEntity.status(HttpStatus.OK).body("file cannot be uploaded.");
+				
+			}
 				
 		}else {
 			return ResponseEntity.status(HttpStatus.ACCEPTED).body("File not uploaded. Only jpeg is accepted..");
 		}
+	}
+	
+	@PostMapping("/uploadynamic")
+	public ResponseEntity<Object> uploadDynamic(MultipartFile file){
+		
+		if(file.getContentType().equals("image/jpeg")) {
+
+			
+			boolean b = fileUploading.uploadDynamicFile(file);
+			
+			if(b) {
+				return ResponseEntity.status(HttpStatus.OK).body("file uploaded successfully..");
+				
+			}else {
+				return ResponseEntity.status(HttpStatus.OK).body("file cannot uploaded....");
+				
+			}
+		}else {
+			return ResponseEntity.status(HttpStatus.ACCEPTED).body("File not uploaded. Only jpeg is accepted..");
+		}		
+		
 	}
 	
 }
