@@ -37,9 +37,4 @@ public class Mycontroller {
 		return "process";
 	}
 	
-	
-	
-	
-	
-	
 }
