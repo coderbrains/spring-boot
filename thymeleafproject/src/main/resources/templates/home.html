@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<body>
+	<h1>this is home.html page.</h1>
+	
+	<h1 th:text= " ${name}" ></h1>
+	
+	<h1>Today the date is : </h1> <h1 th:text= "${date}"></h1>
+	
+	<p>The name is : <span th:text = "${#strings.toUpperCase(name)}"></span>  </p>
+	
+	<div th:with = "a= 12, b = 867, n = ${name}">
+	
+	<h1 th:text = "'the sum of the ' + ${a} + ' and ' + ${b} + ' is ' + ${a+b}"></h1>
+	
+	</div>
+	
+	
+</body>
+</html>
