@@ -34,21 +34,18 @@ public class Mycontroller {
 	@GetMapping("/condition")
 	public String conditional(Model m) {
 		
-		m.addAttribute("bool", true);
+		m.addAttribute("bool", false);
+		
+		List.of("a","b","c");
+		
 		
 		return "condition";
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+	@GetMapping("/switch")
+	public String switchs(Model model ) {
+		model.addAttribute("a", 2);
+		return "switch";
+	}
 	
 }

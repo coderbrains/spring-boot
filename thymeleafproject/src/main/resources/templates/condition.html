@@ -16,5 +16,12 @@
 th:text= "${bool} ? 'Active ' : 'Not Active'"  
 th:style= "${bool}?'color:green' : 'color:red'"></span>   </h3>
 
+
+<h1>
+<span th:if= "${bool}">this is true case.</span>
+<span th:unless= "${bool}">This is false case.</span>
+</h1>
+
+
 </body>
 </html>
