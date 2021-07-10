@@ -1,7 +1,11 @@
 package com.spring.validate.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,12 +23,21 @@ public class Mycontroller {
 	}
 	
 	@PostMapping("/process")
-	public String pro() {
+	public String pro(@Valid  @ModelAttribute("LoginData") LoginCredentials loginCredentials, BindingResult result ,Model model) {
 		
-		System.out.println( "hello");
+		System.out.println(loginCredentials);
+		
+		if(result.hasErrors()) {
+			return "home";
+		}
+		
+		model.addAttribute("login", loginCredentials);
+		
 		
 		return "process";
 	}
+	
+	
 	
 	
 	
