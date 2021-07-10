@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+<h1>this is conditional html file...</h1>
+
+
+<h1>The html file is <span th:text = "${bool}"></span>  </h1>
+
+<h3>the user is : <span 
+th:text= "${bool} ? 'Active ' : 'Not Active'"  
+th:style= "${bool}?'color:green' : 'color:red'"></span>   </h3>
+
+</body>
+</html>

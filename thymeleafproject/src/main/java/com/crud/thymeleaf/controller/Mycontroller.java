@@ -30,5 +30,25 @@ public class Mycontroller {
 		model.addAttribute("names", list);
 		return "contact";
 	}
+
+	@GetMapping("/condition")
+	public String conditional(Model m) {
+		
+		m.addAttribute("bool", true);
+		
+		return "condition";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }
